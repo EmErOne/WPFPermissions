@@ -1,0 +1,35 @@
+﻿<Window x:Class="PermissionsUI.Views.SetPermissionsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SetPermissionsView"
+        Height="450"
+        Width="800">
+    <StackPanel>
+        <DataGrid AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  ItemsSource="{Binding PermissionPropertiesList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title"
+                                    Binding="{Binding Title, Mode=OneWay}" />
+                <DataGridTextColumn Header="Description"
+                                    Binding="{Binding Description, Mode=OneWay}" />
+                <DataGridCheckBoxColumn Header="Admin"
+                                        Binding="{Binding IsAdminSet, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridCheckBoxColumn Header="Manager"
+                                        Binding="{Binding IsManagerSet, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridCheckBoxColumn Header="User"
+                                        Binding="{Binding IsUserSet, UpdateSourceTrigger=PropertyChanged}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Open MainWindow As Admin"
+                Click="OpenMainWindowAsAdmin_Click" />
+        <Button Content="Open MainWindow As Manager"
+                Click="OpenMainWindowAsManage_Click" />
+        <Button Content="Open MainWindow As User"
+                Click="OpenMainWindowAsUser_Click" />
+    </StackPanel>
+</Window>
