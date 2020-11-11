@@ -18,18 +18,21 @@ namespace PermissionsUI.Views
         private void OpenMainWindowAsAdmin_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow(new UserContext() { Group = UserGroups.Admin });
+            mainWindow.Title = "Admin Permissions";
             mainWindow.Show();
         }
 
         private void OpenMainWindowAsManage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow(new UserContext() { Group = UserGroups.Manager });
+            mainWindow.Title = "Manager Permissions";
             mainWindow.Show();
         }
 
         private void OpenMainWindowAsUser_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow(new UserContext() { Group = UserGroups.User });
+            mainWindow.Title = "User Permissions";
             mainWindow.Show();
         }
     }
